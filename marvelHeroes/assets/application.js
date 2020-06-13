@@ -1,4 +1,4 @@
-{
+export default {
 	"heroes": [
 		{
 			"name": "Homem Aranha",
