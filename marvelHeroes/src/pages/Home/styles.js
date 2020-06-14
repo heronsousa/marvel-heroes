@@ -5,18 +5,22 @@ export const Container = styled.View`
     justify-content: flex-start;
 `
 
-export const Header = styled.View`
+export const NavigationBar = styled.View`
+    padding: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`
+
+export const PageInfo = styled.ScrollView`
     padding: 20px;
 `
 
-export const NavBar = styled.View`
+export const Icons = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-`
-
-export const MenuIcon = styled.Image`
 `
 
 export const Icon = styled.View`
@@ -51,9 +55,6 @@ export const ItemHeader = styled.View`
     padding-right: 20px; 
 `
 
-export const Main = styled.ScrollView`
-
-`
 export const Section = styled.Text`
     font-size: 18px;
     font-weight: bold;
