@@ -6,10 +6,11 @@ export const Container = styled.View`
 `
 
 export const NavigationBar = styled.View`
-    padding: 20px;
+    padding: 10px 20px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    /* border-bottom-width: 1px; */
 `
 
 export const PageInfo = styled.ScrollView`
@@ -74,15 +75,10 @@ export const Name = styled.Text`
 
 export const AlterEgo = styled.Text`
     font-size: 10px;
-    color: #b7b7c8;
+    color: #f8f8f8;
 `
 
 export const Character = styled.View`
-    position: absolute;
-    top: 0; 
-    left: 10px; 
-    right: 0;
-    bottom: 5px;
     justify-content: flex-end;
     align-items: flex-start;
 `

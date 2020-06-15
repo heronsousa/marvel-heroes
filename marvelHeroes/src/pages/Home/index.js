@@ -110,6 +110,110 @@ export default function Home() {
                         </TouchableOpacity>
                     </ScrollView>
                 </Item>
+            
+            <Item>
+                <ItemHeader>
+                    <Section>Heróis</Section>
+                    <TouchableOpacity>
+                        <More>Ver mais</More>
+                    </TouchableOpacity>
+                </ItemHeader>
+
+                <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                >
+                    <TouchableOpacity>
+                        <CharacterImage 
+                            source={spider}
+                            imageStyle={{ borderRadius: 20 }}
+                        >
+                            <Character>
+                                <AlterEgo>Peter Paker</AlterEgo>
+                                <Name>Homem Aranha</Name>
+                            </Character>
+                        </CharacterImage>
+                    </TouchableOpacity>
+                </ScrollView>
+            </Item>
+            
+            <Item>
+                <ItemHeader>
+                    <Section>Heróis</Section>
+                    <TouchableOpacity>
+                        <More>Ver mais</More>
+                    </TouchableOpacity>
+                </ItemHeader>
+
+                <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                >
+                    <TouchableOpacity>
+                        <CharacterImage 
+                            source={spider}
+                            imageStyle={{ borderRadius: 20 }}
+                        >
+                            <Character>
+                                <AlterEgo>Peter Paker</AlterEgo>
+                                <Name>Homem Aranha</Name>
+                            </Character>
+                        </CharacterImage>
+                    </TouchableOpacity>
+                </ScrollView>
+            </Item>
+            
+            <Item>
+                <ItemHeader>
+                    <Section>Heróis</Section>
+                    <TouchableOpacity>
+                        <More>Ver mais</More>
+                    </TouchableOpacity>
+                </ItemHeader>
+
+                <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                >
+                    <TouchableOpacity>
+                        <CharacterImage 
+                            source={spider}
+                            imageStyle={{ borderRadius: 20 }}
+                        >
+                            <Character>
+                                <AlterEgo>Peter Paker</AlterEgo>
+                                <Name>Homem Aranha</Name>
+                            </Character>
+                        </CharacterImage>
+                    </TouchableOpacity>
+                </ScrollView>
+            </Item>
+            
+            <Item>
+                <ItemHeader>
+                    <Section>Heróis</Section>
+                    <TouchableOpacity>
+                        <More>Ver mais</More>
+                    </TouchableOpacity>
+                </ItemHeader>
+
+                <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                >
+                    <TouchableOpacity>
+                        <CharacterImage 
+                            source={spider}
+                            imageStyle={{ borderRadius: 20 }}
+                        >
+                            <Character>
+                                <AlterEgo>Peter Paker</AlterEgo>
+                                <Name>Homem Aranha</Name>
+                            </Character>
+                        </CharacterImage>
+                    </TouchableOpacity>
+                </ScrollView>
+            </Item>
             </ScrollView>
 
         </Container>
