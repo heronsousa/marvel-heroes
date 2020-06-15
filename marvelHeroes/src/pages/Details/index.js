@@ -1,19 +1,25 @@
 import React from 'react'
-import { ScrollView, Image, TouchableOpacity, View, Text } from 'react-native';
+import { 
+    ScrollView,
+    TouchableOpacity,
+    Image,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import SkillBar from '../../components/SkillBar';
 import { 
-    InfoTitle,
     CharacterImage,
     Character,
     AlterEgo,
     Name,
     Caracteristics,
     Caracteristic,
-    IconDescription,
-    Description,
     Info,
+    Description,
+    IconDescription,
+    InfoTitle,
+    Skill,
+    SkillType,
     Movie
 } from './styles';
 
@@ -83,10 +89,10 @@ export default function Details() {
 
                 {habilidades.map(habilidade => {
                     return (
-                        <View style={{flexDirection: 'row', alignItems: 'center', marginBottom: 5}}>
-                            <Text style={{color: '#fff', width: 82}}>{habilidade[0].charAt(0).toUpperCase() + habilidade[0].slice(1)}</Text>
+                        <Skill key={habilidade[0]}>
+                            <SkillType>{habilidade[0].charAt(0).toUpperCase() + habilidade[0].slice(1)}</SkillType>
                             <SkillBar value={(habilidade[1] - (habilidade[1]%2==0 ? 0 : 1))/2}/>
-                        </View>
+                        </Skill>
                     )
                 })}
 

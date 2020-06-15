@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.View`
-    flex: 1;
-    justify-content: flex-start;
-    align-items: flex-start;
-`
-
 export const CharacterImage = styled.ImageBackground`
     height: 500px;
 `
@@ -59,6 +53,17 @@ export const Caracteristics = styled.View`
     justify-content: space-between;
     align-items: center;
     margin-top: 40px;
+`
+
+export const Skill = styled.View`
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+`
+
+export const SkillType = styled.Text`
+    color: #fff;
+    width: 82px;
 `
 
 export const Movie = styled.Image`

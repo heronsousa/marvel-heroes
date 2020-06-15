@@ -1,9 +1,13 @@
 import React from 'react'
-import { View, Image } from 'react-native'
 
-import barWhite19 from '../../../assets/icons/bar-white-19.png';
-import barWhite27 from '../../../assets/icons/bar-white-27.png';
-import barGray from '../../../assets/icons/bar-gray.png';
+import { 
+    BarView,
+    BarImage,
+    BarImageValue,
+    Bar
+} from './styles';
+
+import barLine from '../../../assets/icons/bar-white-19.png';
 
 export default function SkillBar({ value }) {
 
@@ -11,31 +15,31 @@ export default function SkillBar({ value }) {
         var bar = [];
         for(var i=1; i<value; i++) {
             bar.push(
-                <View style={{marginRight: 2, justifyContent: 'center'}}>
-                    <Image key={i} source={barWhite19}/>
-                </View>
+                <BarView key={i}>
+                    <BarImage source={barLine}/>
+                </BarView>
             )
         }
         
         bar.push(
-            <View style={{marginRight: 2, justifyContent: 'center'}}>
-                <Image key={i} source={barWhite27}/>
-            </View>
+            <BarView key={value}>
+                <BarImageValue source={barLine}/>
+            </BarView>
         )
 
-        for(var i=1; i<50-value; i++) {
+        for(var i=value+1; i<=50; i++) {
             bar.push(
-                <View style={{marginRight: 2, justifyContent: 'center'}}>
-                    <Image key={i} source={barGray}/>
-                </View>
+                <BarView key={i}>
+                    <BarImage source={barLine} tintColor={'#808080'}/>
+                </BarView>
             )
         }
         return bar
     }
     
     return (
-        <View style={{flexDirection: 'row'}}>
+        <Bar>
             {barra(value)}
-        </View>
+        </Bar>
     )
 }
