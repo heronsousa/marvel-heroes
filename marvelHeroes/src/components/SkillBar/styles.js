@@ -6,14 +6,14 @@ export const Bar = styled.View`
 
 export const BarView = styled.View`
     justify-content: center;
-    margin-right: 3px;
+    margin-right: 3.5px;
 `
 
 export const BarImage = styled.Image`
-    width: 2px;
+    width: 1px;
 `
 
 export const BarImageValue = styled.Image`
-    width: 2px;
+    width: 1px;
     height: 27px;
 `

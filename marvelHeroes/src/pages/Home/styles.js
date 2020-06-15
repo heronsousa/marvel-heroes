@@ -10,7 +10,6 @@ export const NavigationBar = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* border-bottom-width: 1px; */
 `
 
 export const PageInfo = styled.ScrollView`
@@ -78,13 +77,10 @@ export const AlterEgo = styled.Text`
     color: #f8f8f8;
 `
 
-export const Character = styled.View`
-    justify-content: flex-end;
-    align-items: flex-start;
-`
-
 export const CharacterImage = styled.ImageBackground`
     width: 140px;
     height: 200px;
     margin-right: 10px;
+    justify-content: flex-end;
+    padding: 10px;
 `

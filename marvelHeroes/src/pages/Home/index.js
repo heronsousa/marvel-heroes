@@ -5,6 +5,7 @@ import {
     ScrollView
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
 
 import { 
     Container,
@@ -18,7 +19,6 @@ import {
     Section,
     More,
     CharacterImage,
-    Character,
     AlterEgo,
     Name,
 } from './styles';
@@ -34,6 +34,8 @@ import human from '../../../assets/icons/human.svg';
 import hero from '../../../assets/icons/hero.svg';
 
 export default function Home() {
+
+    const navigation = useNavigation();
 
     const iconTypes = [
         { colors: ['#005bea', '#00c6fb'], type: hero},
@@ -97,123 +99,17 @@ export default function Home() {
                         horizontal
                         showsHorizontalScrollIndicator={false}
                     >
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={ () => {navigation.navigate('Details')} }>
                             <CharacterImage 
                                 source={spider}
                                 imageStyle={{ borderRadius: 20 }}
                             >
-                                <Character>
-                                    <AlterEgo>Peter Paker</AlterEgo>
-                                    <Name>Homem Aranha</Name>
-                                </Character>
+                                <AlterEgo>Peter Paker</AlterEgo>
+                                <Name>Homem Aranha</Name>
                             </CharacterImage>
                         </TouchableOpacity>
                     </ScrollView>
                 </Item>
-            
-            <Item>
-                <ItemHeader>
-                    <Section>Heróis</Section>
-                    <TouchableOpacity>
-                        <More>Ver mais</More>
-                    </TouchableOpacity>
-                </ItemHeader>
-
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                >
-                    <TouchableOpacity>
-                        <CharacterImage 
-                            source={spider}
-                            imageStyle={{ borderRadius: 20 }}
-                        >
-                            <Character>
-                                <AlterEgo>Peter Paker</AlterEgo>
-                                <Name>Homem Aranha</Name>
-                            </Character>
-                        </CharacterImage>
-                    </TouchableOpacity>
-                </ScrollView>
-            </Item>
-            
-            <Item>
-                <ItemHeader>
-                    <Section>Heróis</Section>
-                    <TouchableOpacity>
-                        <More>Ver mais</More>
-                    </TouchableOpacity>
-                </ItemHeader>
-
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                >
-                    <TouchableOpacity>
-                        <CharacterImage 
-                            source={spider}
-                            imageStyle={{ borderRadius: 20 }}
-                        >
-                            <Character>
-                                <AlterEgo>Peter Paker</AlterEgo>
-                                <Name>Homem Aranha</Name>
-                            </Character>
-                        </CharacterImage>
-                    </TouchableOpacity>
-                </ScrollView>
-            </Item>
-            
-            <Item>
-                <ItemHeader>
-                    <Section>Heróis</Section>
-                    <TouchableOpacity>
-                        <More>Ver mais</More>
-                    </TouchableOpacity>
-                </ItemHeader>
-
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                >
-                    <TouchableOpacity>
-                        <CharacterImage 
-                            source={spider}
-                            imageStyle={{ borderRadius: 20 }}
-                        >
-                            <Character>
-                                <AlterEgo>Peter Paker</AlterEgo>
-                                <Name>Homem Aranha</Name>
-                            </Character>
-                        </CharacterImage>
-                    </TouchableOpacity>
-                </ScrollView>
-            </Item>
-            
-            <Item>
-                <ItemHeader>
-                    <Section>Heróis</Section>
-                    <TouchableOpacity>
-                        <More>Ver mais</More>
-                    </TouchableOpacity>
-                </ItemHeader>
-
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                >
-                    <TouchableOpacity>
-                        <CharacterImage 
-                            source={spider}
-                            imageStyle={{ borderRadius: 20 }}
-                        >
-                            <Character>
-                                <AlterEgo>Peter Paker</AlterEgo>
-                                <Name>Homem Aranha</Name>
-                            </Character>
-                        </CharacterImage>
-                    </TouchableOpacity>
-                </ScrollView>
-            </Item>
             </ScrollView>
 
         </Container>

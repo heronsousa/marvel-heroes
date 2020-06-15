@@ -36,7 +36,7 @@ export const Description = styled.Text`
 `
 
 export const Info = styled.View`
-    padding: 0 20px;
+    padding: 0 20px 20px 20px;
     background-color: #000;
 `
 
@@ -57,13 +57,13 @@ export const Caracteristics = styled.View`
 
 export const Skill = styled.View`
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
 `
 
 export const SkillType = styled.Text`
     color: #fff;
-    width: 82px;
 `
 
 export const Movie = styled.Image`

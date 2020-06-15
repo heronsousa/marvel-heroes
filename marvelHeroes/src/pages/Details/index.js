@@ -5,6 +5,7 @@ import {
     Image,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
 
 import SkillBar from '../../components/SkillBar';
 import { 
@@ -33,6 +34,9 @@ import weight from '../../../assets/icons/weight.svg';
 import universe from '../../../assets/icons/universe.svg';
 
 export default function Details() {
+    
+    const navigation = useNavigation();
+    
     const caracteristics = [
         {icon: age, value: '30 anos'},
         {icon: weight, value: '78kg'},
@@ -58,7 +62,7 @@ export default function Details() {
                         padding: 20
                     }}
                 >
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => { navigation.goBack() }}>
                         <Image source={back} tintColor='#fff'/>
                     </TouchableOpacity>
                     
