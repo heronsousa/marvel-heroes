@@ -7,7 +7,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
-import SkillBar from '../../components/SkillBar';
+import SkillBar from '~/components/SkillBar';
 import { 
     CharacterImage,
     Character,
@@ -24,12 +24,6 @@ import {
     Movie
 } from './styles';
 
-import back from '../../../assets/icons/back.svg';
-import birth from '../../../assets/icons/age.svg';
-import height from '../../../assets/icons/height.svg';
-import weight from '../../../assets/icons/weight.svg';
-import universe from '../../../assets/icons/universe.svg';
-
 export default function Details() {
     
     const navigation = useNavigation();
@@ -38,12 +32,11 @@ export default function Details() {
     const character = route.params.character;
 
     const caracteristicIcon = {
-        'birth' : birth,
-        'height' : height,
-        'weight' : weight,
-        'universe' : universe
+        'birth' : require('~/assets/icons/age.svg'),
+        'height' : require('~/assets/icons/height.svg'),
+        'weight' : require('~/assets/icons/weight.svg'),
+        'universe' : require('~/assets/icons/universe.svg')
     }
-    console.log(Object.values(character.caracteristics['weight']).join())
 
     return (
         <ScrollView>
@@ -56,7 +49,7 @@ export default function Details() {
                     }}
                 >
                     <TouchableOpacity onPress={() => { navigation.goBack() }}>
-                        <Image source={back} tintColor='#fff'/>
+                        <Image source={require('~/assets/icons/back.svg')} tintColor='#fff'/>
                     </TouchableOpacity>
                     
                     <Character>
@@ -70,15 +63,16 @@ export default function Details() {
                             <Image source={caracteristicIcon[caracteristic]} tintColor='#fff'/>
                             <IconDescription>
                                 {typeof character.caracteristics[caracteristic] !== 'object' ? 
-                                    (caracteristic==='birth' ? 2020-character.caracteristics[caracteristic] : character.caracteristics[caracteristic])
+                                    (caracteristic==='birth' ? 2020-character.caracteristics[caracteristic] + ' anos' : character.caracteristics[caracteristic])
                                     : 
-                                    Object.values(character.caracteristics[caracteristic]).join(' ')}
+                                    character.caracteristics[caracteristic]['value'] + (caracteristic==='weight' ? ' kg' : ' m')}
                             </IconDescription>
                         </Caracteristic>
                     ))}
                     </Caracteristics>
                 </LinearGradient>
             </CharacterImage>
+            
             <Info>
                 <Description>{character.biography}</Description>
                 

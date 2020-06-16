@@ -7,7 +7,7 @@ import {
     Bar
 } from './styles';
 
-import barLine from '../../../assets/icons/bar-white-19.png';
+import barLine from '~/assets/icons/bar-white-19.png';
 
 export default function SkillBar({ value }) {
 

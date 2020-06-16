@@ -22,41 +22,28 @@ import {
     AlterEgo,
     Name,
 } from './styles';
-import data from '../../../assets/application';
+import data from '~/assets/application';
 
-import spider from "../../../assets/chars/spider-man.png";
-import logo from '../../../assets/icons/marvel.svg';
-import search from '../../../assets/icons/search.svg';
-import menu from '../../../assets/icons/menu.svg';
-import villain from '../../../assets/icons/villain.svg';
-import alien from '../../../assets/icons/alien.svg';
-import antihero from '../../../assets/icons/antihero.svg';
-import human from '../../../assets/icons/human.svg';
-import hero from '../../../assets/icons/hero.svg';
 
 export default function Home() {
-
-    console.log(data.heroes)
-
-    const sla = new Map(Object.entries(data));
 
     const navigation = useNavigation();
 
     const iconTypes = [
-        { colors: ['#005bea', '#00c6fb'], type: hero},
-        { colors: ['#ed1d24', '#ed1f69'], type: villain},
-        { colors: ['#B224EF', '#7579FF'], type: antihero},
-        { colors: ['#0BA360', '#3CBA92'], type: alien},
-        { colors: ['#FF7EB3', '#FF758C'], type: human},
+        { colors: ['#005bea', '#00c6fb'], type: require('~/assets/icons/hero.svg')},
+        { colors: ['#ed1d24', '#ed1f69'], type: require('~/assets/icons/villain.svg')},
+        { colors: ['#B224EF', '#7579FF'], type: require('~/assets/icons/antihero.svg')},
+        { colors: ['#0BA360', '#3CBA92'], type: require('~/assets/icons/alien.svg')},
+        { colors: ['#FF7EB3', '#FF758C'], type: require('~/assets/icons/human.svg')},
     ];
 
     return (
         <Container>
 
             <NavigationBar>
-                <Image source={menu} />
-                <Image source={logo} tintColor='#f2264b' />
-                <Image source={search} />
+                <Image source={require('~/assets/icons/menu.svg')} />
+                <Image source={require('~/assets/icons/marvel.svg')} tintColor='#f2264b' />
+                <Image source={require('~/assets/icons/search.svg')} />
             </NavigationBar>
 
             <ScrollView
