@@ -5,7 +5,7 @@ import {
     Image,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 import SkillBar from '../../components/SkillBar';
 import { 
@@ -24,11 +24,8 @@ import {
     Movie
 } from './styles';
 
-import spider from "../../../assets/chars/spider-man.png";
-import spiderHome from "../../../assets/movies/spider-man-homecoming.jpg";
-import spiderFar from "../../../assets/movies/spider-man-far-from-home.jpg";
 import back from '../../../assets/icons/back.svg';
-import age from '../../../assets/icons/age.svg';
+import birth from '../../../assets/icons/age.svg';
 import height from '../../../assets/icons/height.svg';
 import weight from '../../../assets/icons/weight.svg';
 import universe from '../../../assets/icons/universe.svg';
@@ -36,25 +33,21 @@ import universe from '../../../assets/icons/universe.svg';
 export default function Details() {
     
     const navigation = useNavigation();
-    
-    const caracteristics = [
-        {icon: age, value: '30 anos'},
-        {icon: weight, value: '78kg'},
-        {icon: height, value: '1.78m'},
-        {icon: universe, value: 'Terra 616'}
-    ];
+    const route = useRoute();
 
-    const habilidades = [
-        ['force', 70],
-        ['intelligence', 65],
-        ['agility', 90],
-        ['endurance', 60],
-        ['velocity', 80]
-    ];
+    const character = route.params.character;
+
+    const caracteristicIcon = {
+        'birth' : birth,
+        'height' : height,
+        'weight' : weight,
+        'universe' : universe
+    }
+    console.log(Object.values(character.caracteristics['weight']).join())
 
     return (
         <ScrollView>
-             <CharacterImage source={spider}>
+             <CharacterImage source={character.imagePath}>
                 <LinearGradient
                     colors={['rgba(0,0,0, .0)', 'rgba(0,0,0, .0)', 'rgb(0,0,0)']}
                     style={{
@@ -67,38 +60,36 @@ export default function Details() {
                     </TouchableOpacity>
                     
                     <Character>
-                        <AlterEgo>Peter Paker</AlterEgo>
-                        <Name>Homem Aranha</Name>
+                        <AlterEgo>{character.alterEgo}</AlterEgo>
+                        <Name>{character.name}</Name>
                     </Character>
 
                     <Caracteristics>
-                        {caracteristics.map(caracteristic => {
-                            return(
-                                <Caracteristic key={caracteristic.value}>
-                                    <Image source={caracteristic.icon} tintColor='#fff'/>
-                                    <IconDescription>{caracteristic.value}</IconDescription>
-                                </Caracteristic>
-                            )
-                        })}
+                    {Object.keys(character.caracteristics).map((caracteristic) => (
+                        <Caracteristic key={caracteristic}>
+                            <Image source={caracteristicIcon[caracteristic]} tintColor='#fff'/>
+                            <IconDescription>
+                                {typeof character.caracteristics[caracteristic] !== 'object' ? 
+                                    (caracteristic==='birth' ? 2020-character.caracteristics[caracteristic] : character.caracteristics[caracteristic])
+                                    : 
+                                    Object.values(character.caracteristics[caracteristic]).join(' ')}
+                            </IconDescription>
+                        </Caracteristic>
+                    ))}
                     </Caracteristics>
                 </LinearGradient>
             </CharacterImage>
             <Info>
-                <Description>
-                    Em Forest Hills, Queens, Nova York, o estudante de ensino médio, Peter Parker, é um cientista orfão que vive com seu tio Ben e tia May. Ele é mordido por uma aranha radioativa em uma exposição científica e adquire a agilidade e a força proporcional de um aracnídeo. Junto com a super força, Parker ganha a capacidade de andar nas paredes e tetos. 
-                    Através de sua habilidade nativa para a ciência, ele desenvolve um aparelho que o permitir lançar teias artificiais. Inicialmente buscando capitalizar suas novas habilidades, Parker cria um traje e, como Homem Aranha, torna-se uma estrela de televisão.
-                </Description>
+                <Description>{character.biography}</Description>
                 
                 <InfoTitle>Habilidades</InfoTitle>
 
-                {habilidades.map(habilidade => {
-                    return (
-                        <Skill key={habilidade[0]}>
-                            <SkillType>{habilidade[0].charAt(0).toUpperCase() + habilidade[0].slice(1)}</SkillType>
-                            <SkillBar value={(habilidade[1] - (habilidade[1]%2==0 ? 0 : 1))/2}/>
-                        </Skill>
-                    )
-                })}
+                {Object.keys(character.abilities).map((abilitie) => (
+                    <Skill key={abilitie}>
+                        <SkillType>{abilitie.charAt(0).toUpperCase() + abilitie.slice(1)}</SkillType>
+                        <SkillBar value={(character.abilities[abilitie] - (character.abilities[abilitie]%2==0 ? 0 : 1))/2}/>
+                    </Skill>
+                ))}
 
                 <InfoTitle>Filmes</InfoTitle>
 
@@ -106,10 +97,9 @@ export default function Details() {
                     horizontal
                     showsHorizontalScrollIndicator={false}
                 >
-                    <Movie source={spiderFar}/>
-                    <Movie source={spiderHome}/>
-                    <Movie source={spiderFar}/>
-                    <Movie source={spiderHome}/>
+                    {character.movies.map((movie, key) => (
+                        <Movie key={key} source={movie}/>
+                    ))}
                 </ScrollView>
             </Info>
         </ScrollView>

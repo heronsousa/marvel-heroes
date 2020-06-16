@@ -22,6 +22,7 @@ import {
     AlterEgo,
     Name,
 } from './styles';
+import data from '../../../assets/application';
 
 import spider from "../../../assets/chars/spider-man.png";
 import logo from '../../../assets/icons/marvel.svg';
@@ -34,6 +35,10 @@ import human from '../../../assets/icons/human.svg';
 import hero from '../../../assets/icons/hero.svg';
 
 export default function Home() {
+
+    console.log(data.heroes)
+
+    const sla = new Map(Object.entries(data));
 
     const navigation = useNavigation();
 
@@ -87,29 +92,32 @@ export default function Home() {
                     </Icons>
                 </PageInfo>
             
-                <Item>
-                    <ItemHeader>
-                        <Section>Heróis</Section>
-                        <TouchableOpacity>
-                            <More>Ver mais</More>
-                        </TouchableOpacity>
-                    </ItemHeader>
-
-                    <ScrollView
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                    >
-                        <TouchableOpacity onPress={ () => {navigation.navigate('Details')} }>
-                            <CharacterImage 
-                                source={spider}
-                                imageStyle={{ borderRadius: 20 }}
+                {Object.keys(data).map((type) => (
+                    <Item key={type}>
+                        <ItemHeader>
+                            <Section>{type.charAt(0).toUpperCase() + type.slice(1)}</Section>
+                            <TouchableOpacity>
+                                <More>Ver mais</More>
+                            </TouchableOpacity>
+                        </ItemHeader>
+                        <ScrollView
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
                             >
-                                <AlterEgo>Peter Paker</AlterEgo>
-                                <Name>Homem Aranha</Name>
-                            </CharacterImage>
-                        </TouchableOpacity>
-                    </ScrollView>
-                </Item>
+                            {data[type].map(character => (
+                                <TouchableOpacity key={character.name} onPress={ () => { navigation.navigate('Details', {character}) } }>
+                                    <CharacterImage 
+                                        source={character.imagePath}
+                                        imageStyle={{ borderRadius: 20 }}
+                                        >
+                                        <AlterEgo>{character.alterEgo}</AlterEgo>
+                                        <Name>{character.name}</Name>
+                                    </CharacterImage>
+                                </TouchableOpacity>
+                            ))}
+                        </ScrollView>
+                    </Item>
+                ))}
             </ScrollView>
 
         </Container>

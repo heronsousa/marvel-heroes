@@ -45,6 +45,7 @@ export const Title = styled.Text`
 
 export const Item = styled.View`
     padding-left: 20px; 
+    margin-bottom: 30px;
 `
 
 export const ItemHeader = styled.View`
@@ -73,8 +74,8 @@ export const Name = styled.Text`
 `
 
 export const AlterEgo = styled.Text`
-    font-size: 10px;
-    color: #f8f8f8;
+    font-size: 12px;
+    color: #fff;
 `
 
 export const CharacterImage = styled.ImageBackground`
