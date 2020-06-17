@@ -4,8 +4,14 @@ export const CharacterImage = styled.ImageBackground`
     height: 500px;
 `
 
+export const TouchableOpacity = styled.TouchableOpacity`
+    position: absolute;
+    top: 20px;
+    left: 20px;
+`
+
 export const Character = styled.View`
-    margin-top: 200px;
+    margin-bottom:15px;
 `
 
 export const Name = styled.Text`
@@ -22,6 +28,7 @@ export const AlterEgo = styled.Text`
 
 export const Caracteristic = styled.View`
     align-items: center;
+    margin-bottom: 20px;
 `
 
 export const IconDescription = styled.Text`

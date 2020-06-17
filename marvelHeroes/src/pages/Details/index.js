@@ -1,7 +1,6 @@
 import React from 'react'
 import { 
     ScrollView,
-    TouchableOpacity,
     Image,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -10,6 +9,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import SkillBar from '~/components/SkillBar';
 import { 
     CharacterImage,
+    TouchableOpacity,
     Character,
     AlterEgo,
     Name,
@@ -45,7 +45,8 @@ export default function Details() {
                     colors={['rgba(0,0,0, .0)', 'rgba(0,0,0, .0)', 'rgb(0,0,0)']}
                     style={{
                         flex:1,
-                        padding: 20
+                        padding: 20,
+                        justifyContent: 'flex-end'
                     }}
                 >
                     <TouchableOpacity onPress={() => { navigation.goBack() }}>
