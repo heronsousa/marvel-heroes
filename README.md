@@ -1,12 +1,21 @@
 <h1 align="center">Marvel Heroes</h1>
 
+## 📌 Demo
 
-## ?? Projeto 
+<div align="center">
+
+![SpotLyricsGif](marvelHeroes/assets/marvel-heroes.gif)
+
+</div>
+
+
+## 📱 Project
+ 
 
 Projeto [DevChallange](https://github.com/Lorenalgm/marvel-heroes) desenvolvido utilizando React-native.
 
 
-## ????? Tecnologias
+## 👨‍💻 Tecnologias
 
 - [React Native](https://reactnative.dev/)
 - [React Navigation](https://reactnavigation.org/)

@@ -6,7 +6,7 @@ export const CharacterImage = styled.ImageBackground`
 
 export const TouchableOpacity = styled.TouchableOpacity`
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 20px;
 `
 
@@ -18,7 +18,7 @@ export const Name = styled.Text`
     font-size: 40px;
     font-weight: bold;
     color: #fff;
-    max-width: 250px;
+    /* max-width: 250px; */
 `
 
 export const AlterEgo = styled.Text`

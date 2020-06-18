@@ -79,8 +79,8 @@ export const AlterEgo = styled.Text`
 `
 
 export const CharacterImage = styled.ImageBackground`
-    width: 140px;
-    height: 200px;
+    width: 170px;
+    height: 230px;
     margin-right: 10px;
     justify-content: flex-end;
     padding: 10px;
